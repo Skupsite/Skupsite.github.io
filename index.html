@@ -3,25 +3,46 @@
 <head>
 <title>Skup</title>
 <link rel="icon" href="favicon.png">
+<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
-<style>
-img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-</style>
 <body>
 <br>
 <br>
 <h1 style="text-align: center;">Skup</h1>
 <br>
 <br>
-<img src="Images/Skuby01.gif" alt="(Oh No)" width="512" height="512"><br>
+<div id="SkubyDiv1" class="movable"><img src="Images/Skuby01.gif" alt="(Oh No)" width="512" height="512"></div>
+<br>
 <br>
 <p style="text-align: center;">Remaking :3</p>
 <br>
 <br>
 <br>
+<script>
+Move();
+function Move()
+{
+	let frm = null;
+	const element = document.getElementById("SkubyDiv1");
+	let pos = 100;
+	let tim = 0;
+	clearInterval(frm);
+	frm = setInterval(frame, 10);
+	
+	function frame() {
+		tim++;
+		if (tim >= 100) {
+			pos++;
+			element.style.left = pos + 'px';
+		  
+		}
+		
+		if(pos >= 600 )
+		{
+		  clearInterval(frm);
+		}
+	}
+}
+</script>
 </body>
 </html>
