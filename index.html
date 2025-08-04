@@ -11,38 +11,14 @@
 <h1 style="text-align: center;">Skup</h1>
 <br>
 <br>
-<div id="SkubyDiv1" class="movable"><img src="Images/Skuby01.gif" alt="(Oh No)" width="512" height="512"></div>
+<img src="Images/Skuby01.gif" alt="(Oh No)" width="%50" height="%50" class="center">
 <br>
 <br>
-<p style="text-align: center;">Remaking :3</p>
+<p style="text-align: center;">Stories of Skuby! An Argonian from TES4 going on adventure and getting into unwilling mischief!<br>
+Currently there's just one (Unfinished) story but if it goes well, there will be more!</p>
+<br>
+<a href="Story1.html" ><p style="text-align: center;">Skupy Found Bravil</p></a>
 <br>
 <br>
-<br>
-<script>
-Move();
-function Move()
-{
-	let frm = null;
-	const element = document.getElementById("SkubyDiv1");
-	let pos = 100;
-	let tim = 0;
-	clearInterval(frm);
-	frm = setInterval(frame, 10);
-	
-	function frame() {
-		tim++;
-		if (tim >= 100) {
-			pos++;
-			element.style.left = pos + 'px';
-		  
-		}
-		
-		if(pos >= 600 )
-		{
-		  clearInterval(frm);
-		}
-	}
-}
-</script>
 </body>
 </html>

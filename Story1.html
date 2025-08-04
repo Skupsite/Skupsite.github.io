@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skupy Found Bravil</title>
+<link rel="icon" href="favicon.png">
+<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+<br>
+<br>
+<audio id="Music1">
+  <source src="Sounds/Music1.ogg" type="audio/ogg">
+  <source src="Sounds/Music1.wav" type="audio/wav">
+</audio>
+<h1 style="text-align: center;">Skuby Found Bravil</h1>
+<button id="StoryButton" type="button" onclick="StartStory()">Tell A Tale!</button>
+<br>
+<br>
+<p id="p1" style="text-align: center; background-color: black; color: white;"></p>
+<div id="StoryDiv1" class="movable"><img id="StoryImg1" src="Images/Skuby02.gif" alt="(Oh No)" style="display: none"></div>
+<div id="StoryDiv2" class="movable"><img id="StoryImg2" src="Images/Guy01_01.gif" alt="(Oh No)" style="display: none"></div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<script>
+function StartStory() {
+	let frm = null;
+	let pos = 0;
+	document.getElementById("Music1").play();
+	document.body.style.backgroundImage = "url('Images/Background1_1.png')";
+	document.body.style.backgroundSize = "cover";
+	const storyImg01 = document.getElementById("StoryImg1");
+	const storyDiv01 = document.getElementById("StoryDiv1");
+	
+	const storyDiv02 = document.getElementById("StoryDiv2");
+	const storyImg02 = document.getElementById("StoryImg2");
+	
+	const storyButton = document.getElementById("StoryButton");
+	storyDiv01.style.top = "400px";
+	storyDiv01.style.left = "640px";
+	storyImg01.style = "display: show";
+	storyImg01.src = "Images/Skuby02.gif"
+	
+	storyDiv02.style.top = "340px";
+	storyDiv02.style.left = "1200px";
+	
+	storyImg01.style.opacity = 0;
+	
+	storyButton.style = "display: none";
+	
+	let guyPos1 = 1200;
+	let phase = 0;
+  
+	clearInterval(frm);
+	frm = setInterval(frame, 10);
+	
+	
+	
+	function frame()
+	{
+		pos++;
+		if(phase == 0)
+		{
+			if(pos == 20)
+			{
+				storyImg01.style.opacity = 0.25;
+			}
+			if(pos == 40)
+			{
+				storyImg01.style.opacity = 0.5;
+			}
+			if(pos == 60)
+			{
+				storyImg01.style.opacity = 0.75;
+			}
+			if(pos == 80)
+			{
+				storyImg01.style.opacity = 1;
+			}
+			if(pos == 100)
+				phase = 1;
+		}
+		else if(phase == 1)
+		{
+			if(pos == 200)
+			{
+				document.getElementById("p1").innerHTML = "(Skuby) I made it to Bravil! It looks more cleaner than I got told though..";
+			}
+			
+			if(pos == 800)
+			{
+				document.getElementById("p1").innerHTML = "(Skuby) I wonder where in Bravil I am.. I should ask for directions.";
+				storyImg01.src = "Images/Skuby03.gif"
+			}
+			
+			if(pos == 1500)
+			{
+				document.getElementById("p1").innerHTML = "(Skuby) Can someone give me some directions!?";
+				storyImg01.src = "Images/Skuby04.gif"
+				storyImg02.style = "display: show";
+				storyImg02.style.opacity = 0;
+				
+			}
+			
+			if(pos >= 2100)
+			{
+				document.getElementById("p1").innerHTML = "";
+				storyImg01.src = "Images/Skuby03.gif"
+				storyImg02.src = "Images/Guy01_01.gif";
+				
+				guyPos1 -= 1;
+				storyDiv02.style.left = guyPos1 + 'px';
+				
+				if(pos == 2120)
+				{
+					storyImg02.style.opacity = 0.25;
+				}
+				if(pos == 2140)
+				{
+					storyImg02.style.opacity = 0.5;
+				}
+				if(pos == 2160)
+				{
+					storyImg02.style.opacity = 0.75;
+				}
+				if(pos == 2180)
+				{
+					storyImg02.style.opacity = 1;
+				}
+				if(pos == 2450)
+				{
+					phase = 2;
+					pos = 0;
+				}
+			}
+		}
+		else if(phase == 2)
+		{
+			if(pos == 20)
+			{
+				storyImg01.src = "Images/Skuby06.gif"
+			}
+			if(pos == 200)
+			{
+				document.getElementById("p1").innerHTML = "(Skuby) Hi! Can you tell me where in Bravil I can sleep?";
+				storyImg01.src = "Images/Skuby05.gif"
+			}
+			if(pos == 700)
+			{
+				document.getElementById("p1").innerHTML = "";
+				storyImg01.src = "Images/Skuby06.gif"
+				storyImg02.src = "Images/Guy01_02.gif";
+			}
+			if(pos == 850)
+			{
+				document.getElementById("p1").innerHTML = "(Guy) This is Anvil. Bravil is far in the south east.";
+				storyImg02.src = "Images/Guy01_03.gif";
+			}
+			if(pos == 1250)
+			{
+				document.getElementById("Music1").pause();
+				document.getElementById("p1").innerHTML = "";
+				storyImg02.src = "Images/Guy01_01.gif";
+			}
+			if(pos == 1500)
+			{
+				storyImg01.src = "Images/Skuby03.gif"
+			}
+			if(pos == 1800)
+			{
+				document.getElementById("p1").innerHTML = "(Skuby) You mean I was extremely misguided?";
+				storyImg01.src = "Images/Skuby07.gif"
+			}
+			if(pos == 2100)
+			{
+				document.getElementById("p1").innerHTML = "";
+				storyImg01.src = "Images/Skuby03.gif"
+			}
+			
+			if(pos == 2400)
+			{
+				EndStory();
+				clearInterval(frm);
+			}
+		}
+	}
+}
+
+function EndStory()
+{
+	const storyButton = document.getElementById("StoryButton");
+	storyButton.style = "display: visible";
+	const storyImg01 = document.getElementById("StoryImg1");
+	const storyDiv01 = document.getElementById("StoryDiv1");
+	
+	const storyDiv02 = document.getElementById("StoryDiv2");
+	const storyImg02 = document.getElementById("StoryImg2");
+	
+	storyImg01.style = "display: none";
+	storyImg02.style = "display: none";
+
+	document.getElementById("Music1").currentTime = 0;
+	document.body.style.backgroundImage = white;
+	
+}
+</script>
+</body>
+</html>
