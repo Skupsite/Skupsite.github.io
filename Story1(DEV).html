@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skupy Found Bravil</title>
+<link rel="icon" href="favicon.png">
+<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+<br>
+<br>
+<audio id="Music2">
+  <source src="Sounds/Music2.ogg" type="audio/ogg">
+  <source src="Sounds/Music2.wav" type="audio/wav">
+</audio>
+<h1 style="text-align: center;">Skuby Found Bravil</h1>
+<button id="StoryButton" type="button" onclick="StartStory()">Tell A Tale!</button>
+<br>
+<br>
+<p id="p1" style="text-align: center; background-color: black; color: white;"></p>
+<div id="StoryDiv1" class="movable"><img id="StoryImg1" src="Images/Skuby03.gif" alt="(Oh No)" style="display: none"></div>
+<div id="StoryDiv2" class="movable"><img id="StoryImg2" src="Images/Girl01_01.gif" alt="(Oh No)" style="display: none"></div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<script>
+function StartStory() {
+	let frm = null;
+	let pos = 0;
+	document.body.style.backgroundImage = "url('Images/Background1_3.png')";
+	document.body.style.backgroundSize = "cover";
+	const storyImg01 = document.getElementById("StoryImg1");
+	const storyDiv01 = document.getElementById("StoryDiv1");
+	
+	const storyDiv02 = document.getElementById("StoryDiv2");
+	const storyImg02 = document.getElementById("StoryImg2");
+	
+	const storyButton = document.getElementById("StoryButton");
+	storyDiv01.style.top = "400px";
+	storyDiv01.style.left = "500px";
+	storyImg01.style = "display: show";
+	storyImg01.src = "Images/Skuby08.gif"
+	
+	storyDiv02.style.top = "400px";
+	storyDiv02.style.left = "840px";
+	storyImg02.style = "display: show";
+	
+	storyImg01.style.opacity = 1;
+	
+	storyButton.style = "display: none";
+	
+	let guyPos1 = 840;
+	let phase = 4;
+  
+	clearInterval(frm);
+	frm = setInterval(frame, 10);
+	
+	
+	
+	function frame()
+	{
+		pos++;
+		if(phase == 4)
+		{
+			if(pos == 400)
+			{
+				document.getElementById("p1").innerHTML = "(Skuby) Please tell me this is Bravil..";
+				storyImg01.src = "Images/Skuby09.gif";
+			}
+			if(pos == 700)
+			{
+				document.getElementById("p1").innerHTML = "(Girl) Yeah this is Bravil. So what?";
+				storyImg01.src = "Images/Skuby08.gif";
+				storyImg02.src = "Images/Girl01_02.gif";
+			}
+			if(pos == 1100)
+			{
+				document.getElementById("p1").innerHTML = "(Skuby) Really? I finally got to this amazing city?";
+				storyImg01.src = "Images/Skuby05.gif";
+				storyImg02.src = "Images/Girl01_01.gif";
+			}
+			if(pos == 1600)
+			{
+				document.getElementById("p1").innerHTML = "";
+				storyImg01.src = "Images/Skuby06.gif";
+			}
+			if(pos == 1800)
+			{
+				document.getElementById("p1").innerHTML = "(Girl) This place is shit.";
+				storyImg01.src = "Images/Skuby06.gif";
+				storyImg02.src = "Images/Girl01_02.gif";
+			}
+			if(pos == 1900)
+			{
+				storyImg01.src = "Images/Skuby03.gif";
+			}
+			if(pos == 2100)
+			{
+				document.getElementById("p1").innerHTML = "";
+				storyImg02.src = "Images/Girl01_01.gif";
+			}
+			if(pos == 2400)
+			{
+				document.getElementById("p1").innerHTML = "(Skuby) Is there no big attractions to see here?";
+				storyImg01.src = "Images/Skuby07.gif";
+			}
+			if(pos == 2900)
+			{
+				document.getElementById("p1").innerHTML = "";
+				storyImg01.src = "Images/Skuby03.gif";
+			}
+			if(pos == 3200)
+			{
+				document.getElementById("p1").innerHTML = "(Girl) I repeat. This place is shit.";
+				storyImg02.src = "Images/Girl01_02.gif";
+			}
+			if(pos == 3800)
+			{
+				document.getElementById("p1").innerHTML = "";
+				storyImg02.src = "Images/Girl01_01.gif";
+			}
+			
+			if(pos == 4200)
+			{
+				document.body.style.backgroundImage = "url('Images/Blank0.png')";
+				storyImg01.style = "display: none";
+				storyImg02.style = "display: none";
+			}
+		}
+	}
+}
+</script>
+</body>
+</html>

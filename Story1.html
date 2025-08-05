@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Skupy Found Bravil</title>
+<title>Skuby Found Bravil</title>
 <link rel="icon" href="favicon.png">
 <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
@@ -11,6 +11,10 @@
 <audio id="Music1">
   <source src="Sounds/Music1.ogg" type="audio/ogg">
   <source src="Sounds/Music1.wav" type="audio/wav">
+</audio>
+<audio id="Music2">
+  <source src="Sounds/Music2.ogg" type="audio/ogg">
+  <source src="Sounds/Music2.wav" type="audio/wav">
 </audio>
 <h1 style="text-align: center;">Skuby Found Bravil</h1>
 <button id="StoryButton" type="button" onclick="StartStory()">Tell A Tale!</button>
@@ -177,12 +181,163 @@ function StartStory() {
 			{
 				document.getElementById("p1").innerHTML = "";
 				storyImg01.src = "Images/Skuby03.gif"
+				phase = 3;
+				pos = 0;
+			}
+		}
+		else if(phase == 3)
+		{
+			if(pos == 300)
+			{
+				document.getElementById("p1").innerHTML = "(Skuby) This got to be a mistake mister. I don't recal this being Anvil.";
+				storyImg01.src = "Images/Skuby09.gif"
+			}
+			if(pos == 900)
+			{
+				document.getElementById("p1").innerHTML = "(Guy) But it is. I live here so I know it's Anvil.";
+				storyImg01.src = "Images/Skuby08.gif"
+				storyImg02.src = "Images/Guy01_03.gif"
+			}
+			if(pos == 1500)
+			{
+				document.getElementById("p1").innerHTML = "(Guy) Believe me, I know my things. Very many things do I know and I'm not stupid about it.";
+				storyImg02.src = "Images/Guy01_04.gif"
+			}
+			if(pos == 2100)
+			{
+				document.getElementById("p1").innerHTML = "(Skuby) Sorry... I'll head out for Bravil again..";
+				storyImg02.src = "Images/Guy01_05.gif"
+				storyImg01.src = "Images/Skuby09.gif"
+			}
+			if(pos == 2600)
+			{
+				storyImg01.style = "display: none";
+				storyImg02.style = "display: none";
+				document.getElementById("p1").innerHTML = "[Days Later]";
+				document.body.style.backgroundImage = "url('Images/Blank1.png')";
+			}
+			if(pos == 2900)
+			{
+				document.getElementById("Music2").play();
+				document.body.style.backgroundImage = "url('Images/Background1_2.png')";
+				storyDiv01.style.left = "500px";
+				storyImg01.src = "Images/Skuby02.gif"
+				storyImg01.style = "display: show";
+				storyImg02.style = "display: none";
+				
+				document.getElementById("p1").innerHTML = "(Skuby) *Phew. Now this must be Bravil!";
+			}
+			if(pos == 3300)
+			{
+				document.getElementById("p1").innerHTML = "(Distant Voice) No this is Bruma.";
+				
+			}
+			if(pos == 3500)
+			{
+				storyImg01.src = "Images/Skuby10.gif"
+			}
+			if(pos == 3700)
+			{
+				document.getElementById("p1").innerHTML = "(Skuby) FUCK!";
+				storyImg01.src = "Images/Skuby11.gif"
+			}
+			if(pos == 3900)
+			{
+				document.getElementById("Music2").pause();
+				storyImg01.style = "display: none";
+				storyImg02.style = "display: none";
+				document.getElementById("p1").innerHTML = "[Days Later Again]";
+				document.body.style.backgroundImage = "url('Images/Blank1.png')";
+			}
+			if(pos == 4300)
+			{
+				document.getElementById("p1").innerHTML = "";
+				document.body.style.backgroundImage = "url('Images/Background1_3.png')";
+				storyDiv01.style.left = "500px";
+				storyDiv02.style.top = "400px";
+				storyDiv02.style.left = "840px";
+				storyImg01.style = "display: show";
+				storyImg02.style = "display: show";
+				storyImg01.src = "Images/Skuby08.gif";
+				storyImg02.src = "Images/Girl01_01.gif";
+				document.getElementById("Music2").currentTime = 0;
+				document.getElementById("Music2").play();
+				phase = 4;
+				pos = 0;
+			}
+		}
+		else if(phase == 4)
+		{
+			if(pos == 200)
+			{
+				document.getElementById("p1").innerHTML = "(Skuby) Please tell me this is Bravil..";
+				storyImg01.src = "Images/Skuby09.gif";
+			}
+			if(pos == 500)
+			{
+				document.getElementById("p1").innerHTML = "(Girl) Yeah this is Bravil. So what?";
+				storyImg01.src = "Images/Skuby08.gif";
+				storyImg02.src = "Images/Girl01_02.gif";
+			}
+			if(pos == 900)
+			{
+				document.getElementById("p1").innerHTML = "(Skuby) Really? I finally got to this amazing city?";
+				storyImg01.src = "Images/Skuby05.gif";
+				storyImg02.src = "Images/Girl01_01.gif";
+			}
+			if(pos == 1400)
+			{
+				document.getElementById("p1").innerHTML = "";
+				storyImg01.src = "Images/Skuby06.gif";
+			}
+			if(pos == 1600)
+			{
+				document.getElementById("p1").innerHTML = "(Girl) This place is shit.";
+				storyImg01.src = "Images/Skuby06.gif";
+				storyImg02.src = "Images/Girl01_02.gif";
+			}
+			if(pos == 1700)
+			{
+				storyImg01.src = "Images/Skuby03.gif";
+			}
+			if(pos == 1900)
+			{
+				document.getElementById("p1").innerHTML = "";
+				storyImg02.src = "Images/Girl01_01.gif";
+			}
+			if(pos == 2200)
+			{
+				document.getElementById("p1").innerHTML = "(Skuby) Is there no big attractions to see here?";
+				storyImg01.src = "Images/Skuby07.gif";
+			}
+			if(pos == 2700)
+			{
+				document.getElementById("p1").innerHTML = "";
+				storyImg01.src = "Images/Skuby03.gif";
+			}
+			if(pos == 3000)
+			{
+				document.getElementById("p1").innerHTML = "(Girl) I repeat. This place is shit.";
+				storyImg02.src = "Images/Girl01_02.gif";
+			}
+			if(pos == 3600)
+			{
+				document.getElementById("p1").innerHTML = "";
+				storyImg02.src = "Images/Girl01_01.gif";
 			}
 			
-			if(pos == 2400)
+			if(pos == 4000)
+			{
+				document.body.style.backgroundImage = "url('Images/Blank0.png')";
+				storyImg01.style = "display: none";
+				storyImg02.style = "display: none";
+				document.getElementById("p1").innerHTML = "[The End]";
+				
+			}
+			
+			if(pos == 4200)
 			{
 				EndStory();
-				clearInterval(frm);
 			}
 		}
 	}
@@ -200,9 +355,12 @@ function EndStory()
 	
 	storyImg01.style = "display: none";
 	storyImg02.style = "display: none";
-
+	document.getElementById("Music1").pause();
+	document.getElementById("Music2").pause();
 	document.getElementById("Music1").currentTime = 0;
-	document.body.style.backgroundImage = white;
+	document.getElementById("Music2").currentTime = 0;
+	document.getElementById("p1").innerHTML = "";
+	document.body.style.backgroundImage = "url('Images/Blank0.png')";
 	
 }
 </script>
