@@ -326,7 +326,18 @@ function StartStory() {
 				storyImg02.src = "Images/Girl01_01.gif";
 			}
 			
+			if(pos == 3700)
+			{
+				storyImg01.src = "Images/Skuby12.gif";
+			}
+			
 			if(pos == 4000)
+			{
+				document.getElementById("p1").innerHTML = "(Skuby) My dissapointment is more overwhelming than my will to be on this place..";
+				storyImg01.src = "Images/Skuby13.gif";
+			}
+			
+			if(pos == 4600)
 			{
 				document.body.style.backgroundImage = "url('Images/Blank0.png')";
 				storyImg01.style = "display: none";
@@ -335,7 +346,7 @@ function StartStory() {
 				
 			}
 			
-			if(pos == 4200)
+			if(pos == 4800)
 			{
 				EndStory();
 			}
