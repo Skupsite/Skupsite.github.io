@@ -21,8 +21,8 @@
 <br>
 <br>
 <p id="p1" style="text-align: center; background-color: black; color: white;"></p>
-<div id="StoryDiv1" class="movable"><img id="StoryImg1" src="Images/Skuby02.gif" alt="(Oh No)" style="display: none"></div>
-<div id="StoryDiv2" class="movable"><img id="StoryImg2" src="Images/Guy01_01.gif" alt="(Oh No)" style="display: none"></div>
+<div id="StoryDiv1" class="movable"><img id="StoryImg1" src="Images/Skuby02.webp" alt="(Oh No)" style="display: none"></div>
+<div id="StoryDiv2" class="movable"><img id="StoryImg2" src="Images/Guy01_01.webp" alt="(Oh No)" style="display: none"></div>
 <br>
 <br>
 <br>
@@ -45,7 +45,7 @@ function StartStory() {
 	storyDiv01.style.top = "400px";
 	storyDiv01.style.left = "640px";
 	storyImg01.style = "display: show";
-	storyImg01.src = "Images/Skuby02.gif"
+	storyImg01.src = "Images/Skuby02.webp"
 	
 	storyDiv02.style.top = "340px";
 	storyDiv02.style.left = "1200px";
@@ -96,13 +96,13 @@ function StartStory() {
 			if(pos == 800)
 			{
 				document.getElementById("p1").innerHTML = "(Skuby) I wonder where in Bravil I am.. I should ask for directions.";
-				storyImg01.src = "Images/Skuby03.gif"
+				storyImg01.src = "Images/Skuby03.webp"
 			}
 			
 			if(pos == 1500)
 			{
 				document.getElementById("p1").innerHTML = "(Skuby) Can someone give me some directions!?";
-				storyImg01.src = "Images/Skuby04.gif"
+				storyImg01.src = "Images/Skuby04.webp"
 				storyImg02.style = "display: show";
 				storyImg02.style.opacity = 0;
 				
@@ -111,8 +111,8 @@ function StartStory() {
 			if(pos >= 2100)
 			{
 				document.getElementById("p1").innerHTML = "";
-				storyImg01.src = "Images/Skuby03.gif"
-				storyImg02.src = "Images/Guy01_01.gif";
+				storyImg01.src = "Images/Skuby03.webp"
+				storyImg02.src = "Images/Guy01_01.webp";
 				
 				guyPos1 -= 1;
 				storyDiv02.style.left = guyPos1 + 'px';
@@ -144,43 +144,43 @@ function StartStory() {
 		{
 			if(pos == 20)
 			{
-				storyImg01.src = "Images/Skuby06.gif"
+				storyImg01.src = "Images/Skuby06.webp"
 			}
 			if(pos == 200)
 			{
 				document.getElementById("p1").innerHTML = "(Skuby) Hi! Can you tell me where in Bravil I can sleep?";
-				storyImg01.src = "Images/Skuby05.gif"
+				storyImg01.src = "Images/Skuby05.webp"
 			}
 			if(pos == 700)
 			{
 				document.getElementById("p1").innerHTML = "";
-				storyImg01.src = "Images/Skuby06.gif"
-				storyImg02.src = "Images/Guy01_02.gif";
+				storyImg01.src = "Images/Skuby06.webp"
+				storyImg02.src = "Images/Guy01_02.webp";
 			}
 			if(pos == 850)
 			{
 				document.getElementById("p1").innerHTML = "(Guy) This is Anvil. Bravil is far in the south east.";
-				storyImg02.src = "Images/Guy01_03.gif";
+				storyImg02.src = "Images/Guy01_03.webp";
 			}
 			if(pos == 1250)
 			{
 				document.getElementById("Music1").pause();
 				document.getElementById("p1").innerHTML = "";
-				storyImg02.src = "Images/Guy01_01.gif";
+				storyImg02.src = "Images/Guy01_01.webp";
 			}
 			if(pos == 1500)
 			{
-				storyImg01.src = "Images/Skuby03.gif"
+				storyImg01.src = "Images/Skuby03.webp"
 			}
 			if(pos == 1800)
 			{
 				document.getElementById("p1").innerHTML = "(Skuby) You mean I was extremely misguided?";
-				storyImg01.src = "Images/Skuby07.gif"
+				storyImg01.src = "Images/Skuby07.webp"
 			}
 			if(pos == 2100)
 			{
 				document.getElementById("p1").innerHTML = "";
-				storyImg01.src = "Images/Skuby03.gif"
+				storyImg01.src = "Images/Skuby03.webp"
 				phase = 3;
 				pos = 0;
 			}
@@ -190,24 +190,24 @@ function StartStory() {
 			if(pos == 300)
 			{
 				document.getElementById("p1").innerHTML = "(Skuby) This got to be a mistake mister. I don't recal this being Anvil.";
-				storyImg01.src = "Images/Skuby09.gif"
+				storyImg01.src = "Images/Skuby09.webp"
 			}
 			if(pos == 900)
 			{
 				document.getElementById("p1").innerHTML = "(Guy) But it is. I live here so I know it's Anvil.";
-				storyImg01.src = "Images/Skuby08.gif"
-				storyImg02.src = "Images/Guy01_03.gif"
+				storyImg01.src = "Images/Skuby08.webp"
+				storyImg02.src = "Images/Guy01_03.webp"
 			}
 			if(pos == 1500)
 			{
 				document.getElementById("p1").innerHTML = "(Guy) Believe me, I know my things. Very many things do I know and I'm not stupid about it.";
-				storyImg02.src = "Images/Guy01_04.gif"
+				storyImg02.src = "Images/Guy01_04.webp"
 			}
 			if(pos == 2100)
 			{
 				document.getElementById("p1").innerHTML = "(Skuby) Sorry... I'll head out for Bravil again..";
-				storyImg02.src = "Images/Guy01_05.gif"
-				storyImg01.src = "Images/Skuby09.gif"
+				storyImg02.src = "Images/Guy01_05.webp"
+				storyImg01.src = "Images/Skuby09.webp"
 			}
 			if(pos == 2600)
 			{
@@ -221,7 +221,7 @@ function StartStory() {
 				document.getElementById("Music2").play();
 				document.body.style.backgroundImage = "url('Images/Background1_2.png')";
 				storyDiv01.style.left = "500px";
-				storyImg01.src = "Images/Skuby02.gif"
+				storyImg01.src = "Images/Skuby02.webp"
 				storyImg01.style = "display: show";
 				storyImg02.style = "display: none";
 				
@@ -234,12 +234,12 @@ function StartStory() {
 			}
 			if(pos == 3500)
 			{
-				storyImg01.src = "Images/Skuby10.gif"
+				storyImg01.src = "Images/Skuby10.webp"
 			}
 			if(pos == 3700)
 			{
 				document.getElementById("p1").innerHTML = "(Skuby) FUCK!";
-				storyImg01.src = "Images/Skuby11.gif"
+				storyImg01.src = "Images/Skuby11.webp"
 			}
 			if(pos == 3900)
 			{
@@ -256,10 +256,10 @@ function StartStory() {
 				storyDiv01.style.left = "500px";
 				storyDiv02.style.top = "400px";
 				storyDiv02.style.left = "840px";
+				storyImg01.src = "Images/Skuby08.webp";
+				storyImg02.src = "Images/Girl01_01.webp";
 				storyImg01.style = "display: show";
 				storyImg02.style = "display: show";
-				storyImg01.src = "Images/Skuby08.gif";
-				storyImg02.src = "Images/Girl01_01.gif";
 				document.getElementById("Music2").currentTime = 0;
 				document.getElementById("Music2").play();
 				phase = 4;
@@ -271,70 +271,70 @@ function StartStory() {
 			if(pos == 200)
 			{
 				document.getElementById("p1").innerHTML = "(Skuby) Please tell me this is Bravil..";
-				storyImg01.src = "Images/Skuby09.gif";
+				storyImg01.src = "Images/Skuby09.webp";
 			}
 			if(pos == 500)
 			{
 				document.getElementById("p1").innerHTML = "(Girl) Yeah this is Bravil. So what?";
-				storyImg01.src = "Images/Skuby08.gif";
-				storyImg02.src = "Images/Girl01_02.gif";
+				storyImg01.src = "Images/Skuby08.webp";
+				storyImg02.src = "Images/Girl01_02.webp";
 			}
 			if(pos == 900)
 			{
 				document.getElementById("p1").innerHTML = "(Skuby) Really? I finally got to this amazing city?";
-				storyImg01.src = "Images/Skuby05.gif";
-				storyImg02.src = "Images/Girl01_01.gif";
+				storyImg01.src = "Images/Skuby05.webp";
+				storyImg02.src = "Images/Girl01_01.webp";
 			}
 			if(pos == 1400)
 			{
 				document.getElementById("p1").innerHTML = "";
-				storyImg01.src = "Images/Skuby06.gif";
+				storyImg01.src = "Images/Skuby06.webp";
 			}
 			if(pos == 1600)
 			{
 				document.getElementById("p1").innerHTML = "(Girl) This place is shit.";
-				storyImg01.src = "Images/Skuby06.gif";
-				storyImg02.src = "Images/Girl01_02.gif";
+				storyImg01.src = "Images/Skuby06.webp";
+				storyImg02.src = "Images/Girl01_02.webp";
 			}
 			if(pos == 1700)
 			{
-				storyImg01.src = "Images/Skuby03.gif";
+				storyImg01.src = "Images/Skuby03.webp";
 			}
 			if(pos == 1900)
 			{
 				document.getElementById("p1").innerHTML = "";
-				storyImg02.src = "Images/Girl01_01.gif";
+				storyImg02.src = "Images/Girl01_01.webp";
 			}
 			if(pos == 2200)
 			{
 				document.getElementById("p1").innerHTML = "(Skuby) Is there no big attractions to see here?";
-				storyImg01.src = "Images/Skuby07.gif";
+				storyImg01.src = "Images/Skuby07.webp";
 			}
 			if(pos == 2700)
 			{
 				document.getElementById("p1").innerHTML = "";
-				storyImg01.src = "Images/Skuby03.gif";
+				storyImg01.src = "Images/Skuby03.webp";
 			}
 			if(pos == 3000)
 			{
 				document.getElementById("p1").innerHTML = "(Girl) I repeat. This place is shit.";
-				storyImg02.src = "Images/Girl01_02.gif";
+				storyImg02.src = "Images/Girl01_02.webp";
 			}
 			if(pos == 3600)
 			{
 				document.getElementById("p1").innerHTML = "";
-				storyImg02.src = "Images/Girl01_01.gif";
+				storyImg02.src = "Images/Girl01_01.webp";
 			}
 			
 			if(pos == 3700)
 			{
-				storyImg01.src = "Images/Skuby12.gif";
+				storyImg01.src = "Images/Skuby12.webp";
 			}
 			
 			if(pos == 4000)
 			{
 				document.getElementById("p1").innerHTML = "(Skuby) My dissapointment is more overwhelming than my will to be on this place..";
-				storyImg01.src = "Images/Skuby13.gif";
+				storyImg01.src = "Images/Skuby13.webp";
 			}
 			
 			if(pos == 4600)
